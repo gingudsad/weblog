@@ -44,7 +44,7 @@ public class Response<T> {
         return response;
     }
 
-    public static <T>Response<T> fail(String errMessage,String errCode){
+    public static <T>Response<T> fail(String errCode,String errMessage){
         Response<T> response = new Response<>();
         response.setSuccess(false);
         response.setMessage(errMessage);
@@ -52,7 +52,7 @@ public class Response<T> {
         return response;
     }
 
-
+    //业务异常请求失败
     public static <T>Response<T> fail(BizException bizException){
         Response<T> response = new Response<>();
         response.setSuccess(false);
@@ -61,6 +61,7 @@ public class Response<T> {
         return response;
     }
 
+    //其他异常请求失败的响应体
     public static <T>Response<T> fail(BaseException baseException){
         Response<T> response = new Response<>();
         response.setSuccess(false);
